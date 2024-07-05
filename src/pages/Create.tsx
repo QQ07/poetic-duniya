@@ -1,4 +1,3 @@
-import React from "react";
 import Createe from "../components/Create";
 function Create() {
   return (
