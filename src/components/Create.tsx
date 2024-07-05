@@ -1,12 +1,12 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
 import axios from "axios";
-import React, { useState } from "react";
+import { useState } from "react";
 import { BACKEND_URL } from "../config";
 import { useNavigate } from "react-router-dom";
 
 function Createe() {
-  const [title, setTitle] = useState();
-  const [content, setContent] = useState();
+  const [title, setTitle] = useState("");
+  const [content, setContent] = useState("");
   const navigate = useNavigate();
   return (
     <div className="p-16">
@@ -21,7 +21,7 @@ function Createe() {
       />
 
       <textarea
-        rows="10"
+        rows={10}
         onChange={(e) => {
           setContent(e.target.value);
         }}
