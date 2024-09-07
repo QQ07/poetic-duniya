@@ -1,17 +1,13 @@
-import { Auth } from "../components/Auth";
-import { Quote } from "../components/Quote";
+import Login from '../components/Login';
+import Quote from '../components/Quote';
 
-export const Signin = () => {
+const Signin = () => {
   return (
-    <>
-      <div className="grid lg:grid-cols-2">
-        <div>
-          <Auth type={"signin"} />
-        </div>
-        <div className="hidden lg:block">
-          <Quote />
-        </div>
-      </div>
-    </>
+    <div className="grid grid-cols-1 md:grid-cols-2 w-screen h-screen">
+      <Login />
+      <Quote />
+    </div>
   );
 };
+
+export default Signin;

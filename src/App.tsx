@@ -1,30 +1,51 @@
-import { BrowserRouter, Route, Routes } from "react-router-dom";
-import { Signup } from "./pages/Signup";
-import { Signin } from "./pages/Signin";
-import { Blogs } from "./pages/Blogs";
-import { Blog } from "./pages/Blog";
-import { Test } from "./pages/Test";
-import Navbar from "./components/Navbar";
-import Create from "./pages/Create";
-import { RecoilRoot } from "recoil";
-
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { lazy, Suspense } from 'react';
+import Spinner from './components/Spinner';
+import { ThemeProvider } from '@/components/theme-provider';
+import Stats from './pages/Stats';
+// const Home = lazy(() => import('./pages/Home'));
+const Signup = lazy(() => import('./pages/Signup'));
+const Signin = lazy(() => import('./pages/Signin'));
+const Blog = lazy(() => import('./pages/Blog'));
+const Blogs = lazy(() => import('./pages/Blogs'));
+const Publish = lazy(() => import('./pages/Publish'));
+const Edit = lazy(() => import('./pages/Edit'));
+const Bookmarks = lazy(() => import('./pages/Bookmarks'));
+const User = lazy(() => import('./pages/User'));
+const Contributor = lazy(() => import('./pages/Contributor'));
+const Error = lazy(() => import('./pages/404'));
 function App() {
   return (
-    <>
-      <RecoilRoot>
+    <ThemeProvider>
+      <div>
         <BrowserRouter>
-          <Navbar />
-          <Routes>
-            <Route path="/signup" element={<Signup />} />
-            <Route path="/signin" element={<Signin />} />
-            <Route path="/blog/:id" element={<Blog />} />
-            <Route path="/blogs" element={<Blogs />} />
-            <Route path="/create" element={<Create />} />
-            <Route path="/test" element={<Test />} />
-          </Routes>
+          <Suspense
+            fallback={
+              <div className="w-screen h-screen flex justify-center items-center">
+                <Spinner />
+              </div>
+            }
+          >
+            <Routes>
+              <Route path="/signup" element={<Signup />} />
+              <Route path="/signin" element={<Signin />} />
+              <Route path="/blogs" element={<Blogs />} />
+              <Route path="/blog/:id" element={<Blog />} />
+              <Route path="/publish" element={<Publish />} />
+              <Route path="/edit/:id" element={<Edit />} />
+              <Route path="/bookmarks" element={<Bookmarks />} />
+              <Route path="/profile/:id" element={<User />} />
+              <Route path="/contributors" element={<Contributor />} />
+              <Route path="*" element={<Error />} />
+              {/* <Route path="/" element={<Home />} /> */}
+              <Route path="/" element={<Blogs />} />
+              <Route path="/stats" element={<Stats />} />
+            </Routes>
+          </Suspense>
         </BrowserRouter>
-      </RecoilRoot>
-    </>
+        <div className="absolute top-0 z-[-2] h-screen w-screen bg-main bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(17,94,89,0.3),rgba(255,255,255,0))]"></div>
+      </div>
+    </ThemeProvider>
   );
 }
 

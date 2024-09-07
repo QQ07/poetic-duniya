@@ -1,18 +1,13 @@
-import { useParams } from "react-router-dom";
-import { FullBlog } from "../components/FullBlog";
-import { useBlog } from "../hooks";
+import Appbar from '../components/Appbar';
+import Story from '../components/Blog/Story';
 
-export const Blog = () => {
-  const params = useParams();
-  const id: string = params.id || "";
-
-  const { loading, blog } = useBlog({id});
-  if (loading) {
-    return <>Loading...</>;
-  }
+const Blog = () => {
   return (
     <>
-      <FullBlog {...blog}></FullBlog>
+      <Appbar />
+      <Story />
     </>
   );
 };
+
+export default Blog;
