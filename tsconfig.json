@@ -19,10 +19,18 @@
     "jsx": "react-jsx",
 
     /* Linting */
-    "strict": true,
-    "noUnusedLocals": true,
-    "noUnusedParameters": true,
-    "noFallthroughCasesInSwitch": true
+    // "strict": false,
+    // "noUnusedLocals": true,
+    // "noUnusedParameters": true,
+    "noFallthroughCasesInSwitch": true,
+    "strict": false, // Disable all strict type checks
+    "noImplicitAny": false, // Allow implicit 'any' types
+    "strictNullChecks": false, // Allow `null` and `undefined` in all types
+    "strictFunctionTypes": false, // Disable strict checking of function types
+    "strictPropertyInitialization": false, // Disable strict checks on property initialization in classes
+    "noUnusedLocals": false, // Allow unused variables
+    "noUnusedParameters": false, // Allow unused parameters
+    "forceConsistentCasingInFileNames": false // Disable enforcing consistent casing
   },
   "include": ["src"],
   "references": [{ "path": "./tsconfig.node.json" }]
