@@ -1,10 +1,5 @@
-import { Avatar } from "./BlogCard";
-
-export const FullBlog = (props: {
-  content: string;
-  title: string;
-  author: { name: string; tagline: string };
-}) => {
+import Avatar from './Avatar';
+export const FullBlog = (props: { content: string; title: string; author: { name: string; tagline: string } }) => {
   console.log(props);
   return (
     <div className="grid grid-cols-12 px-40 pt-20 gap-10 text-xl w-screen">
@@ -16,15 +11,14 @@ export const FullBlog = (props: {
       <div className="col-span-3">
         Author
         <div className="flex items-center">
-          <div >
+          <div>
             <Avatar Name={props.author.name}></Avatar>
           </div>
           <div>
-            <div className="font-bold text-xl"> {props.author.name || "Anonymous"}</div>
+            <div className="font-bold text-xl"> {props.author.name || 'Anonymous'}</div>
             <div className="text-sm text-slate-400">
-              {" "}
-              Random Catch Phrase About the Author's ability to grab user's
-              attention
+              {' '}
+              Random Catch Phrase About the Author's ability to grab user's attention
             </div>
           </div>
         </div>
