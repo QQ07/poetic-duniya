@@ -5,7 +5,7 @@ import BlogSkeleton from '../skeletons/BlogsSkeleton';
 import AnimatedMessage from './Blog/AnimatedMessage';
 import ScrollToTopButton from './ScrollToTop';
 
-const BlogsList = () => {
+const AllBlogs = () => {
   const [infiniteScrollRef, setInfiniteScrollRef] = useState<HTMLDivElement | null>(null);
   const [showEndMessage, setShowEndMessage] = useState(false);
   const [showConfetti, setShowConfetti] = useState(false);
@@ -74,4 +74,4 @@ const BlogsList = () => {
   );
 };
 
-export default BlogsList;
+export default AllBlogs;

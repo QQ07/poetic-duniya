@@ -1,14 +1,10 @@
 import Appbar from '../components/Appbar';
-import BlogsList from '../components/BlogsList';
-import TopicsSlider from '../components/TopicsSlider';
-import { useState } from 'react';
+import AllBlogs from '../components/BlogsList';
 const Blogs = () => {
-  const [selectedTopic, setSelectedTopic] = useState<string>('');
   return (
     <>
       <Appbar skipAuthCheck />
-      <TopicsSlider selectedTopic={selectedTopic} setSelectedTopic={setSelectedTopic} />
-      <BlogsList />
+      <AllBlogs />
     </>
   );
 };

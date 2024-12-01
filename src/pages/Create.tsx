@@ -1,5 +1,5 @@
-import Createe from "../components/Create";
-function Create() {
+import Createe from '../components/Create';
+const Create = () => {
   return (
     <div>
       <Createe />
