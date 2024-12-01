@@ -1,11 +1,11 @@
-import { Link } from "react-router-dom";
-import { Avatar } from "./BlogCard";
-import { useRecoilState } from "recoil";
-import { userState } from "../store/atoms";
+import { Link } from 'react-router-dom';
+import Avatar from './BlogCard';
+import { useRecoilState } from 'recoil';
+import { userState } from '../store/atoms';
 
 export default function Navbar() {
   const [user, setUser] = useRecoilState(userState);
-  console.log("reocial: " + user.name);
+  console.log('recoil: ' + user.name);
   // const navigate = useNavigate();
   return (
     <div className="border-b flex justify-between px-10 py-5 border-2 items-center">
@@ -20,7 +20,7 @@ export default function Navbar() {
             New
           </button>
         </Link>
-        {user.name ? <Avatar Name={user.name} size={20} /> : <></>}
+        {/* {user.name ? <Avatar Name={user.name} size={20} /> : <></>} */}
       </div>
     </div>
   );

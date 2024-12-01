@@ -9,11 +9,5 @@
   "arrowParens": "always",
   "jsxSingleQuote": false,
   "bracketSameLine": false,
-  "endOfLine": "lf",
-  "prettier/prettier": [
-  "error",
-  {
-    "endOfLine": "auto"
-  }
-]
+  "endOfLine": "auto"
 }
