@@ -5,7 +5,7 @@ const filePath = "src\\data\\poems.json";
 // New poems to be added
 const newPoems = [
   {
-    id: 8,
+    id: 7,
     title: "बाप आणि लेक ",
     language: "marathi",
     content: `लेक जाई सासरी 
