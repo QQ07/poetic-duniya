@@ -5,35 +5,37 @@ const filePath = "src\\data\\poems.json";
 // New poems to be added
 const newPoems = [
   {
-    id: 8,
-    title: "ज्ञान अज्ञान",
-    language: "marathi",
-    content: `बारीक असा अंतर असे 
-शब्दात या दोन
-असे नाव जया 
-ज्ञान व अज्ञान 
+    id: 9,
+    title: "Epitome of love",
+    language: "english",
+    content: `Incarnation of infatuation
+Essence of affection
+Instantiation of passion
+Abstract of desire 
 
-नसे माहीत कोणा फरक
-नसे जाण कोणा अंतर
-वेळ फक्त दाखवी
-यात फरक नी अंतर
+Caress account in three
+Crave being the first
+Allure the second
+Add-on bond to be the final
+Phases counting in three
+Summa of worship
 
-तुटे हे रेख जया 
-संपेल तया सर्व
-समजे ना कधी
-घडे ना कधी
+Segments of of love
+With warmth, fondness
+Devotion to cherish
+Alliance of zenith
+Praised to the promised land
+Being an belle of paradise
 
-सुटे शब्दातला उच्चार अ
-तया घडे उच्चार ज्ञान 
-जूडे शब्दात उच्चार अ 
-तया बिघडे उच्चार ज्ञान
-नी होवे अज्ञान 
-
-अंतर हा इतकाच 
-शब्द हे इतकेच
-फरक यात अवघेच
-असे शब्द जे 
-ज्ञान व अज्ञान `,
+Reincarnation of treasure
+Brings clouds chasing dark
+Complications elevate
+Fondness explode
+Reverence to scorn
+Like to loathe
+Leading the way to demise of soul
+It's the epitome of love
+ `,
     preview: "बारीक असा अंतर असे \nशब्दात या दोन\n",
   },  
 ];
