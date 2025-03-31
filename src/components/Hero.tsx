@@ -3,9 +3,9 @@ import { useEffect, useState } from "react";
 import logo from "../assets/logo/poetic.png";
 
 const welcomeTexts = [
-  { text: "Poetic Duniya me aapka swagat hai", lang: "hindi" },
-  { text: "कवितेच्या दुनियेत आपले स्वागत आहे", lang: "marathi" },
-  { text: "Welcome to the World of Poetry", lang: "english" },
+  { text: "Welcome to the World of Poetry!", lang: "english" },
+  { text: "कवितेच्या दुनियेत आपले स्वागत आहे!", lang: "marathi" },
+  { text: "काव्यात्मक दुनिया में आपका स्वागत है!", lang: "hindi" },
 ];
 
 export default function Hero() {
