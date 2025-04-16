@@ -8,7 +8,7 @@ const newPoems = [
     id: 11,
     title: "Hard to say you all a goodbye",
     language: "english",
-    content: 'Longing in the memories
+    content: `Longing in the memories
     Withstanding in your presence
     We all are wondering 
     How to say you all 
@@ -35,7 +35,7 @@ const newPoems = [
     May this all moments and memories 
     Live long enough to the last breath
     May you all achieve the strength 
-    To get all you wish for' ,
+    To get all you wish for` ,
     preview: "All those though seems easy\nBut yet hard to say\nHard to say you all a goodbye\n",
   },  
 ];
