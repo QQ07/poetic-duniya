@@ -6,38 +6,51 @@ const filePath = "src\\data\\poems.json";
 const newPoems = [
   {
     id: 11,
-    title: "Hard to say you all a goodbye",
-    language: "english",
-    content: `Longing in the memories
-    Withstanding in your presence
-    We all are wondering 
-    How to say you all 
-    Those simple words
-    All those though seems easy
-    But yet hard to say
-    Hard to say you all a goodbye
-    
-    Splashes of the countless memories
-    Moments we spend together 
-    Occasions we celebrated together 
-    Hardships we faced, success we achieved
-    All these moments we spend together
-    Turning to memories
-    Can't think of turning the pages 
-    Cause these chapter is about to close
-    Though the new chapter brings more joy
-    Yet it's hard to to say
-    Hard to say you all a goodbye
-    
-    Though the memories longing behind 
-    Success awaits for you
-    Bringing joy, happiness and prosperity 
-    May this all moments and memories 
-    Live long enough to the last breath
-    May you all achieve the strength 
-    To get all you wish for` ,
-    preview: "All those though seems easy\nBut yet hard to say\nHard to say you all a goodbye\n",
-  },  
+    title: "कोणते माझे धर्म",
+    language: "marathi",
+    content: `कोणी ना विचारे काय माझे नाव  
+कोणी ना विचारे कोणते माझे गाव 
+कोणी ना विचारे कोणती माझी भाषा 
+कोणी ना विचारे कोणते माझे भाव 
+विचारे आज सर्वे कोणते माझे धर्म 
+
+ना चाले आज जात पात इथं 
+न विचारे आज सर्वे नुसतं 
+कोणते माझे धर्म 
+
+राहे जिथं मिळूणी सर्वे एकत्र 
+चले जिथं मिळूणी एक 
+तिथे चाले आज हा विषय 
+नी कोणी बोले नी विचारे 
+कोणते माझे धर्म 
+
+ना जात ना पात 
+ना अमीर ना गरीब 
+असो तो कोणी मात्र 
+मारेल तो फक्त 
+एक च धर्म 
+
+दहशत ही कशी जमली
+आज या आपुल्या दारी 
+आले कोण हे घुसूणी 
+मारे हे कसे आपल्या बंधूंना 
+का तर असे त्यास हिंदू धर्म 
+
+देई दोष सर्व फक्त तयासणी 
+म्हणे असे ते मुस्लिम धर्म 
+केला नाही जिथं फरक काही 
+देव असे सारखाच असो तो धर्म कोणत्याही 
+अल्लाह असो व राम असो व  गजानन 
+आहे सर्वे एक मग कुठून आले हे फरक 
+
+असे जिथे सर्व जीव 
+नसे काही फरक जयासणी 
+का असे फरक तिथे 
+नी विचारे कोणी येउणि इथे 
+कोणते असे माझे धर्म`,
+    preview:
+      "कोणी ना विचारे काय माझे नाव  \nकोणी ना विचारे कोणते माझे गाव\n",
+  },
 ];
 
 // Check if file exists and has valid JSON
