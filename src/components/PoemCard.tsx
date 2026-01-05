@@ -24,13 +24,13 @@ export default function PoemCard({ poem, onClick }: PoemCardProps) {
       animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
       transition={{ duration: 0.5 }}
       onClick={onClick}
-      className="bg-white rounded-lg shadow-xl p-6 cursor-pointer transform hover:scale-105 transition-transform duration-300"
+      className="bg-gradient-to-br from-white to-gray-50 rounded-xl shadow-lg p-6 cursor-pointer transform hover:scale-105 hover:shadow-2xl transition-all duration-300 border border-gray-100"
     >
-      <h3 className="text-2xl font-semibold mb-4">{poem.title}</h3>
-      <p className="text-gray-600 whitespace-pre-line">{poem.preview}</p>
+      <h3 className="text-2xl font-bold mb-4 text-gray-900 leading-tight">{poem.title}</h3>
+      <p className="text-gray-700 whitespace-pre-line leading-relaxed mb-4">{poem.preview}</p>
       <div className="mt-4">
-        <span className="inline-block px-3 py-1 bg-purple-100 text-purple-800 rounded-full text-sm">
-          {poem.language}
+        <span className="inline-block px-4 py-2 bg-gradient-to-r from-purple-500 to-indigo-500 text-white rounded-full text-sm font-semibold uppercase tracking-wide shadow-sm">
+          {poem.language.toUpperCase()}
         </span>
       </div>
     </motion.div>

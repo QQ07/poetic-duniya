@@ -74,8 +74,8 @@ export default function PoemPage() {
             </p>
             
             <div>
-              <span className={`inline-block px-4 py-2 rounded-full text-${style.accent}-100 border border-${style.accent}-100/30 text-sm`}>
-                {poem.language}
+              <span className={`inline-block px-4 py-2 rounded-full text-${style.accent}-100 border border-${style.accent}-100/30 text-sm font-semibold uppercase tracking-wide shadow-sm transition-all hover:shadow-md`}>
+                {poem.language.toUpperCase()}
               </span>
             </div>
           </motion.div>
