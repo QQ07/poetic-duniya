@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Lora:wght@400;500;600&family=Inter:wght@300;400;500;600&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -16,4 +18,75 @@
   .text-gradient {
     @apply bg-clip-text text-transparent;
   }
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --color-parchment: #FAF9F6;
+  --color-text: #1A1A1A;
+  --color-rose: #E8D5D5;
+  --color-sage: #D1D7C4;
+  --color-brown: #8B7355;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Lora', serif;
+  background-color: var(--color-parchment);
+  color: var(--color-text);
+  line-height: 1.8;
+}
+
+h1, h2, h3 {
+  font-family: 'Playfair Display', serif;
+  font-weight: 600;
+}
+
+button {
+  font-family: 'Inter', sans-serif;
+  border: none;
+  background: none;
+  cursor: pointer;
+}
+
+/* Smooth fade transition for page changes */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* Selection styling */
+::selection {
+  background-color: var(--color-rose);
+  color: var(--color-text);
+}
+
+/* Scrollbar styling */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--color-parchment);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--color-sage);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-rose);
 }
