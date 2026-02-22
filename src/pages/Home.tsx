@@ -1,94 +1,73 @@
-import { useState } from "react";
-import { motion } from "framer-motion";
-import { useNavigate } from "react-router-dom";
-import Hero from "../components/Hero";
-import PoemCard from "../components/PoemCard";
+import { useEffect } from "react";
+import { Link } from "react-router-dom";
+import Navigation from "../components/Navigation";
 import poemsData from "../data/poems.json";
 import Footer from "../components/Footer";
 
 export default function Home() {
-  const [selectedLanguage, setSelectedLanguage] = useState<string>("all");
-  const [visiblePoems, setVisiblePoems] = useState(4); // reduced initial to show a 2x2 grid
-  const navigate = useNavigate();
+  const featuredPoem = poemsData.poems[0];
 
-  const filteredPoems = poemsData.poems.filter(
-    (poem) => selectedLanguage === "all" || poem.language === selectedLanguage
-  );
-
-  const languages = [
-    "all",
-    ...new Set(poemsData.poems.map((poem) => poem.language)),
-  ];
-
-  const loadMore = () => {
-    setVisiblePoems((prev) => prev + 6);
-  };
-
-  const handlePoemClick = (poemId: number) => {
-    window.scrollTo({ top: 0, behavior: "smooth" });
-    navigate(`/poem/${poemId}`);
-  };
+  useEffect(() => {
+    const heroSection = document.querySelector(".hero-fade");
+    if (heroSection) {
+      heroSection.animate(
+        [
+          { opacity: 0, transform: "translateY(16px)" },
+          { opacity: 1, transform: "translateY(0)" },
+        ],
+        { duration: 600, easing: "ease-out" }
+      );
+    }
+  }, []);
 
   return (
-    <div className="min-h-screen bg-gray-50">
-      <Hero />
+    <div className="min-h-screen bg-[#FAF9F6]">
+      <Navigation />
 
-      <div className="container mx-auto px-4 py-12">
-        <div className="text-center mb-8">
-          <h2 className="text-3xl md:text-4xl font-extrabold text-gray-900">
-            Discover Poems
-          </h2>
-          <p className="text-sm text-gray-500 mt-2">
-            Showing{" "}
-            {Math.min(visiblePoems, filteredPoems.length)} of{" "}
-            {filteredPoems.length}{" "}
-            {selectedLanguage !== "all" && `in ${selectedLanguage}`}
+      <section className="hero-fade flex items-center justify-center min-h-screen px-4">
+        <div className="w-full max-w-3xl text-center">
+          {/* Overline */}
+          <div className="mb-8">
+            <p className="text-xs uppercase tracking-widest text-[#8B7355]">
+              Welcome to
+            </p>
+          </div>
+
+          {/* Main Title */}
+          <h1 className="font-serif text-5xl sm:text-6xl md:text-7xl text-[#1A1A1A] mb-6 leading-tight">
+            Poetic<br />Duniya
+          </h1>
+
+          {/* Subtitle */}
+          <p className="font-serif text-xl text-[#8B7355] mb-12 leading-relaxed max-w-xl mx-auto">
+            A sanctuary for poetry in multiple languages. Discover verses that speak to the soul.
           </p>
-        </div>
 
-        <div className="flex justify-center gap-4 mb-8">
-          {languages.map((lang) => (
-            <button
-              key={lang}
-              onClick={() => setSelectedLanguage(lang)}
-              className={`px-5 py-2 rounded-full transition-all shadow-sm focus:outline-none ${
-                selectedLanguage === lang
-                  ? "bg-purple-600 text-white shadow-lg"
-                  : "bg-white text-purple-600 hover:bg-purple-50"
-              }`}
-            >
-              {lang.charAt(0).toUpperCase() + lang.slice(1)}
-            </button>
-          ))}
-        </div>
+          {/* Featured Snippet */}
+          <div className="mb-12 p-8 bg-white/50 border border-[#E8D5D5]/30 rounded-lg backdrop-blur-sm">
+            <p className="font-serif text-lg text-[#1A1A1A] italic leading-relaxed mb-4">
+              "{featuredPoem.preview}"
+            </p>
+            <p className="text-xs uppercase tracking-widest text-[#8B7355]">
+              — {featuredPoem.title}
+            </p>
+          </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-          {filteredPoems.slice(0, visiblePoems).map((poem) => (
-            <motion.div
-              key={poem.id}
-              whileHover={{ scale: 1.02 }}
-              className="bg-white rounded-lg shadow-sm hover:shadow-lg transition-shadow"
-            >
-              <PoemCard poem={poem} onClick={() => handlePoemClick(poem.id)} />
-            </motion.div>
-          ))}
-        </div>
-
-        {visiblePoems < filteredPoems.length && (
-          <motion.div
-            className="flex justify-center mt-12"
-            initial={{ opacity: 0, y: 8 }}
-            animate={{ opacity: 1, y: 0 }}
+          {/* CTA Button */}
+          <Link
+            to="/poems"
+            className="inline-block px-12 py-4 bg-[#E8D5D5] text-[#1A1A1A] font-medium rounded-full hover:bg-[#D1D7C4] transition-colors duration-300 shadow-lg"
           >
-            <button
-              onClick={loadMore}
-              className="bg-purple-600 text-white px-8 py-3 rounded-full hover:bg-purple-700 transition-colors shadow-md"
-            >
-              Load More Poems
-            </button>
-          </motion.div>
-        )}
-      </div>
+            Start Reading
+          </Link>
+
+          {/* Decorative divider */}
+          <div className="mt-16 flex justify-center">
+            <div className="w-12 h-0.5 bg-[#D1D7C4]" />
+          </div>
+        </div>
+      </section>
+
       <Footer />
     </div>
   );
